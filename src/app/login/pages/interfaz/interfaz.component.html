@@ -1,19 +1,22 @@
-<div class="grid classCenter">
-    <p-card header="Bienvenido a ..." [style]="{'width':'25rem','margin-bottom':'2em'}">
+<div class="grid">
+    <img src="./assets/unicatolica.png" alt="">
+    <p-card class="p-card" header="Bienvenido A ICTUS2.0" >
         <div class="grid">
             <div class="col-12">
-                <span class="p-float-label">
+                <span class="p-float-label p-input-icon-left label">
+                    <i class="pi pi-user"></i>
                     <input type="text" id="inputtext" pInputText> 
                     <label for="inputtext">Username</label>
                 </span>
             </div>
             <div class="col-12">
-                <span class="p-float-label">
-                    <p-password inputId="password"></p-password>
-                    <label for="password">Password</label>
+                <span class="p-float-label p-input-icon-left label">
+                    <i class="pi pi-lock"></i>
+                    <input type="password" id="inputpass" pPassword>
+                    <label for="inputpass">Password</label>
                 </span>
             </div>
-            <button pButton type="button" 
+            <button pButton type="button"
                 label="Sign in"
                 class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
             </button>
