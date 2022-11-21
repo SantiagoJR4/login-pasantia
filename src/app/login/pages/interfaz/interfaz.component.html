@@ -1,0 +1,27 @@
+<div class="grid classCenter">
+    <p-card header="Bienvenido a ..." [style]="{'width':'25rem','margin-bottom':'2em'}">
+        <div class="grid">
+            <div class="col-12">
+                <span class="p-float-label">
+                    <input type="text" id="inputtext" pInputText> 
+                    <label for="inputtext">Username</label>
+                </span>
+            </div>
+            <div class="col-12">
+                <span class="p-float-label">
+                    <p-password inputId="password"></p-password>
+                    <label for="password">Password</label>
+                </span>
+            </div>
+            <button pButton type="button" 
+                label="Sign in"
+                class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
+            </button>
+            <button pButton type="button" 
+                label="Create an account"
+                href="/"
+                class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
+            </button>
+        </div>
+    </p-card>
+</div>
