@@ -10,8 +10,16 @@ img{
     width: 50%;
 }
 #inputtext, #inputpass{
-    padding-left: 8rem;
+    width: 25rem;
+    border-radius: 17px;
 }
 .p-button{
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.grid{
+    display: grid;
+    margin-right: 10.5rem;
+
 }

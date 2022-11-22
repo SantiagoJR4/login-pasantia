@@ -1,6 +1,8 @@
 .container{
-   position: absolute;
-   top: 25%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+   position: flex;
+   margin: auto;
+   min-height: 100vh;
+   /* top: 25%;
+   left: 50%; */
+   /* transform: translate(-50%, -50%); */
 }

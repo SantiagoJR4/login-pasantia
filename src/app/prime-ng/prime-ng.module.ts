@@ -7,6 +7,8 @@ import {ButtonModule} from 'primeng/button';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
+import {StepsModule} from 'primeng/steps';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -17,7 +19,9 @@ import {CardModule} from 'primeng/card';
     ButtonModule,
     PasswordModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    StepsModule,
+    ToastModule
   ]
 })
 export class PrimeNgModule { }
