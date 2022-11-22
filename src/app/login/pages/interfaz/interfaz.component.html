@@ -1,30 +1,29 @@
-<div class="grid">
-    <img src="./assets/unicatolica.png" alt="">
-    <p-card class="p-card" header="Bienvenido A ICTUS2.0" >
-        <div class="grid">
-            <div class="col-12">
-                <span class="p-float-label p-input-icon-left label">
-                    <i class="pi pi-user"></i>
-                    <input type="text" id="inputtext" pInputText> 
-                    <label for="inputtext">Username</label>
-                </span>
+<div class="grid login-container">
+    <div class="col-4">
+        <p-image src="./assets/logo institucional UniCatólica-02.svg" alt=""></p-image>
+        <p-card class="p-card" header="Bienvenido A ICTUS2.0" >
+            <div class="grid">
+                <div class="p-inputgroup col-12">
+                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                    <input type="text" pInputText placeholder="Username">         
+                </div>
+                <div class="p-inputgroup col-12">
+                    <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                    <input type="password" pInputText placeholder="Password">
+                </div>
+                <div class="col-12">
+                    <p-password placeholder="Password" [toggleMask]="true"></p-password>
+                </div>
+                <button pButton type="button"
+                    label="Sign in"
+                    class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
+                </button>
+                <button pButton type="button" 
+                    label="Create an account"
+                    href="/"
+                    class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
+                </button>
             </div>
-            <div class="col-12">
-                <span class="p-float-label p-input-icon-left label">
-                    <i class="pi pi-lock"></i>
-                    <input type="password" id="inputpass" pPassword>
-                    <label for="inputpass">Password</label>
-                </span>
-            </div>
-            <button pButton type="button"
-                label="Sign in"
-                class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
-            </button>
-            <button pButton type="button" 
-                label="Create an account"
-                href="/"
-                class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
-            </button>
-        </div>
-    </p-card>
+        </p-card>
+    </div>
 </div>

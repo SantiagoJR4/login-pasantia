@@ -1,4 +1,4 @@
-.label{
+/* .label{
     margin-bottom: 10px;
 }
 .p-card{
@@ -11,7 +11,18 @@ img{
 }
 #inputtext, #inputpass{
     padding-left: 8rem;
+    width: 25rem;
+    border-radius: 17px;
 }
 .p-button{
     margin-left: 15px;
+}
+
+.grid{
+    display: grid;
+    margin-right: 10.5rem;
+} */
+
+.login-container{
+    justify-content: center;
 }

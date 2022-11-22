@@ -7,6 +7,7 @@ import {ButtonModule} from 'primeng/button';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
+import {ImageModule} from 'primeng/image';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import {CardModule} from 'primeng/card';
     ButtonModule,
     PasswordModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    ImageModule
   ]
 })
 export class PrimeNgModule { }
