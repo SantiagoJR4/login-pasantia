@@ -1,19 +1,19 @@
 <p-card>
     <ng-template pTemplate="title">
-        Personal Information
+        Formación Academica.
     </ng-template>
     <ng-template pTemplate="subtitle">
-        Enter your personal information
+        Ingrese su formación academica correspondiente.
     </ng-template>
+    <label>Modalidad Academica</label><hr>
     <ng-template pTemplate="content">
-        <div class="p-fluid"formgrid;grid class="field">
-                <label for="firstname">Firstname</label>
-                <input  id="firstname" type="text" required pInputText> 
+        <div *ngFor="let category of categories" class="field-checkbox">
+            <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory" [disabled]="category.key === 'R'"></p-radioButton>
+            <label [for]="category.key">{{category.name}}</label>
         </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-        <div class="grid grid-nogutter justify-content-end">
-            <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button>
+        <div class="field">
+            <label for="nombreTitulo">Nombre del titulo obtenido</label><br>
+            <input id="nombreTitulo" type="text" required pInputText> 
         </div>
     </ng-template>
 </p-card>

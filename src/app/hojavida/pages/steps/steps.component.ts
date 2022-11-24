@@ -22,6 +22,10 @@ export class StepsComponent implements OnInit {
       {
         label:'Formación Complementaria',
         routerLink:'formComp'
+      },
+      {
+        label:'Experiencia Laboral',
+        routerLink:'expLaboral'
       }
     ];
   }

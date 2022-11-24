@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { formacionAcademica } from '../../interfaces/formacionAcademica-interface';
+
 
 @Component({
   selector: 'app-formacion-academica',
@@ -8,18 +10,21 @@ import { formacionAcademica } from '../../interfaces/formacionAcademica-interfac
 })
 export class FormacionAcademicaComponent implements OnInit {
 
-  informacionAcademica:formacionAcademica[]=[];
+  informacionAcademica:any;
+  selectedCategory:any=null;
   submitted: boolean = false;
 
-  constructor() { }
+  categories:any[]=[{name:'Universidad', key:'U'},{name:'Doctorado', key:'D'}];
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.selectedCategory=this.categories[1];
   }
-  
+
   // nextPage() {
-  //   if (this.informacionAcademica.firstname && this.informacionAcademica.lastname && this.informacionAcademica.age) {
-  //       this.ticketService.ticketInformation.informacionAcademica = this.informacionAcademica;
-  //       this.router.navigate(['steps/seat']);
+  //   if (this.informacionAcademica.nombreTitulo) {
+  //       this.router.navigate(['formComp']);
 
   //       return;
   //   }
