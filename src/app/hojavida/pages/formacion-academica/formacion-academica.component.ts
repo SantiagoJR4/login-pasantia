@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { formacionAcademica } from '../../interfaces/formacionAcademica-interface';
+import { FormacionAcademica, modalidad, ModalidadAcademica } from '../../interfaces/formacionAcademica-interface';
 
 
 @Component({
@@ -10,26 +9,26 @@ import { formacionAcademica } from '../../interfaces/formacionAcademica-interfac
 })
 export class FormacionAcademicaComponent implements OnInit {
 
-  informacionAcademica:any;
-  selectedCategory:any=null;
-  submitted: boolean = false;
+  modalidadAcademicaList:modalidad[];
+  selectedModalidad!:modalidad;
 
-  categories:any[]=[{name:'Universidad', key:'U'},{name:'Doctorado', key:'D'}];
+  constructor() {
+    this.modalidadAcademicaList=[
+      {codigo:'AU', nombre: 'Auxiliar'},
+      {codigo: 'TP', nombre: 'Técnico Profesional'},
+      {codigo: 'TC', nombre: 'Tecnólogo'},
+      {codigo: 'TCE', nombre: 'Tecnólogo Especializado'},
+      {codigo: 'UN', nombre: 'Universitario'},
+      {codigo: 'ESP', nombre: 'Especialización'},
+      {codigo: 'MG', nombre: 'Maestría o Magíster'},
+      {codigo: 'DOC', nombre: 'Doctorado o PHD'},
+      {codigo:'PDO', nombre:'Post Doctorado'}
+    ]
 
-  constructor(private router:Router) { }
+   }
 
   ngOnInit(): void {
-    this.selectedCategory=this.categories[1];
+
   }
-
-  // nextPage() {
-  //   if (this.informacionAcademica.nombreTitulo) {
-  //       this.router.navigate(['formComp']);
-
-  //       return;
-  //   }
-
-  //   this.submitted = true;
-  // }
 
 }

@@ -10,6 +10,8 @@ import {CardModule} from 'primeng/card';
 import {StepsModule} from 'primeng/steps';
 import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {DropdownModule} from 'primeng/dropdown';
+import {DividerModule} from 'primeng/divider';
 
 @NgModule({
   declarations: [],
@@ -23,7 +25,9 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     CardModule,
     StepsModule,
     ToastModule,
-    RadioButtonModule
+    RadioButtonModule,
+    DropdownModule,
+    DividerModule
   ]
 })
 export class PrimeNgModule { }

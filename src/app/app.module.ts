@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,11 +13,12 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     LoginModule,
     PrimeNgModule,
-    HojavidaModule
+    HojavidaModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

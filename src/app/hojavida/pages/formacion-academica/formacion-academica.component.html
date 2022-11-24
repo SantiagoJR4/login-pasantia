@@ -5,15 +5,22 @@
     <ng-template pTemplate="subtitle">
         Ingrese su formación academica correspondiente.
     </ng-template>
-    <label>Modalidad Academica</label><hr>
+    <label>Modalidad Academica</label>
+    <p-divider></p-divider>
     <ng-template pTemplate="content">
-        <div *ngFor="let category of categories" class="field-checkbox">
-            <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory" [disabled]="category.key === 'R'"></p-radioButton>
-            <label [for]="category.key">{{category.name}}</label>
+        <div class="grid p-fluid">
+            <div class="col-12 md:col-4">
+                <p-dropdown [options]="modalidadAcademicaList" [(ngModel)]="selectedModalidad"
+                    placeholder="Seleccione una modalidad academica"
+                    optionLabel="nombre">
+                </p-dropdown>
+            </div>
         </div>
-        <div class="field">
-            <label for="nombreTitulo">Nombre del titulo obtenido</label><br>
-            <input id="nombreTitulo" type="text" required pInputText> 
+        <div class="col-12 md:col-4">
+            <div class="field">
+                <label for="nombreTitulo">Nombre del titulo obtenido</label><br>
+                <input id="nombreTitulo" type="text" required pInputText> 
+            </div>
         </div>
     </ng-template>
 </p-card>
