@@ -12,6 +12,9 @@ import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from 'primeng/dropdown';
 import {DividerModule} from 'primeng/divider';
+import {FileUploadModule} from 'primeng/fileupload';
+import {HttpClientModule} from '@angular/common/http';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [],
@@ -27,7 +30,10 @@ import {DividerModule} from 'primeng/divider';
     ToastModule,
     RadioButtonModule,
     DropdownModule,
-    DividerModule
+    DividerModule,
+    FileUploadModule,
+    HttpClientModule,
+    CheckboxModule
   ]
 })
 export class PrimeNgModule { }

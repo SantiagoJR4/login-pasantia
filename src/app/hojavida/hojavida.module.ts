@@ -6,7 +6,7 @@ import { FormacionComplementariaComponent } from './pages/formacion-complementar
 import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experiencia-laboral.component';
 import { HojavidaRoutingModule } from './hojavida-routing.module';
 import {FormsModule} from '@angular/forms';
-
+import {CommonModule} from '@angular/common'
 @NgModule({
   declarations: [
     FormacionAcademicaComponent,
@@ -17,8 +17,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     PrimeNgModule,
     HojavidaRoutingModule,
-    FormsModule
-
+    FormsModule,
+    CommonModule
   ]
 })
 export class HojavidaModule { }

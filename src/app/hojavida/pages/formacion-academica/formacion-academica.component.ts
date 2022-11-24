@@ -12,6 +12,8 @@ export class FormacionAcademicaComponent implements OnInit {
   modalidadAcademicaList:modalidad[];
   selectedModalidad!:modalidad;
 
+  checked: boolean = false;
+
   constructor() {
     this.modalidadAcademicaList=[
       {codigo:'AU', nombre: 'Auxiliar'},
@@ -29,6 +31,12 @@ export class FormacionAcademicaComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  isChecked(){
+    this.checked=!this.checked;
+    console.log(this.checked);
+    
   }
 
 }
