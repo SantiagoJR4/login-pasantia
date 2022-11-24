@@ -26,3 +26,7 @@ img{
 .login-container{
     justify-content: center;
 }
+
+.password-icon{
+    z-index: 20;
+}

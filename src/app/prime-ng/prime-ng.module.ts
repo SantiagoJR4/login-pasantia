@@ -8,6 +8,8 @@ import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import {ImageModule} from 'primeng/image';
+import {CascadeSelectModule} from 'primeng/cascadeselect';
+import {DividerModule} from 'primeng/divider';
 
 @NgModule({
   declarations: [],
@@ -19,7 +21,9 @@ import {ImageModule} from 'primeng/image';
     PasswordModule,
     InputTextModule,
     CardModule,
-    ImageModule
+    ImageModule,
+    CascadeSelectModule,
+    DividerModule
   ]
 })
 export class PrimeNgModule { }

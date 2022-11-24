@@ -1,29 +1,38 @@
 <div class="grid login-container">
-    <div class="col-4">
+    <div class="col-12 md:col-3 xl:w-25rem">
         <p-image src="./assets/logo institucional UniCatólica-02.svg" alt=""></p-image>
-        <p-card class="p-card" header="Bienvenido A ICTUS2.0" >
+        <p-card class="p-card" styleClass="p-2" header="Bienvenido A ICTUS2.0" >
             <div class="grid">
                 <div class="p-inputgroup col-12">
                     <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                    <input type="text" pInputText placeholder="Username">         
+                    <input type="text" pInputText placeholder="Nombre de Usuario">         
                 </div>
-                <div class="p-inputgroup col-12">
+                <div class="p-inputgroup col-12" *ngIf="isPasswordVisible;else passwordIsNotVisible">
                     <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-                    <input type="password" pInputText placeholder="Password">
+                    <input type="text" pInputText placeholder="Contraseña" [(ngModel)]="passwordValue">
+                    <span class="p-input-icon-right"><i class="pi pi-eye-slash password-icon" (click)="seePassword()"></i></span>
                 </div>
-                <div class="col-12">
-                    <p-password placeholder="Password" [toggleMask]="true"></p-password>
+                <div class="col-12 pb-0">
+                    <button pButton type="button"
+                        label="Ingresar"
+                        class="col-12 p-button-outlined p-button-rounded">
+                    </button>
+                    <p-divider class="col-12 p-0"></p-divider>
+                    <button pButton type="button" 
+                        label="Crear una cuenta"
+                        href="/"
+                        class="col-12 p-button-rounded">
+                    </button>
                 </div>
-                <button pButton type="button"
-                    label="Sign in"
-                    class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
-                </button>
-                <button pButton type="button" 
-                    label="Create an account"
-                    href="/"
-                    class="p-element p-ripple p-button-outlined p-button-rounded p-button p-component">
-                </button>
             </div>
         </p-card>
     </div>
 </div>
+
+<ng-template #passwordIsNotVisible>
+    <div class="p-inputgroup col-12">
+        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+        <input type="password" pInputText placeholder="Contraseña" [(ngModel)]="passwordValue">
+        <span class="p-input-icon-right"><i class="pi pi-eye password-icon" (click)="seePassword()"></i></span>
+    </div>
+</ng-template>
