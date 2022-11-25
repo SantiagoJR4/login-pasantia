@@ -24,3 +24,6 @@ export enum ModalidadAcademica{
     PDO = 'Post Doctorado'
 
 }
+export enum ModalidadComplementaria{
+    
+}

@@ -1,2 +1,19 @@
-<p>formacion-complementaria works!</p>
-<h1>HOLA MUNDO CRUEL</h1>
+<p-card>
+    <ng-template pTemplate="title">
+        Formación Complementaria.
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+        Ingrese su formación academica complementaria.
+    </ng-template>
+    <ng-template pTemplate="content">
+        <div class="grid">
+            <div class="col-6 flex flex-column">
+                <label>Modalidad Complementaria</label>
+                <p-dropdown [options]="modalidadComplementariaList" [(ngModel)]="selectedModalidad"
+                    placeholder="Seleccione una modalidad academica"
+                    optionLabel="nombre">
+                </p-dropdown>
+            </div>
+        </div>
+    </ng-template>
+</p-card>
