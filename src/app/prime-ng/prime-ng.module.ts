@@ -14,7 +14,6 @@ import {StepsModule} from 'primeng/steps';
 import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from 'primeng/dropdown';
-import {DividerModule} from 'primeng/divider';
 import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -31,8 +30,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     CardModule,
     ImageModule,
     CascadeSelectModule,
-    DividerModule
-    CardModule,
+    DividerModule,
     StepsModule,
     ToastModule,
     RadioButtonModule,
