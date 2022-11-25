@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfazComponent implements OnInit {
 
+  isPasswordVisible: boolean = false
+  passwordValue: string = ''
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  seePassword () {
+    this.isPasswordVisible = !this.isPasswordVisible
+    console.log(this.isPasswordVisible);
+    
   }
 
 }

@@ -7,6 +7,9 @@ import {ButtonModule} from 'primeng/button';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
+import {ImageModule} from 'primeng/image';
+import {CascadeSelectModule} from 'primeng/cascadeselect';
+import {DividerModule} from 'primeng/divider';
 import {StepsModule} from 'primeng/steps';
 import {ToastModule} from 'primeng/toast';
 import {RadioButtonModule} from 'primeng/radiobutton';
@@ -25,6 +28,10 @@ import {CheckboxModule} from 'primeng/checkbox';
     ButtonModule,
     PasswordModule,
     InputTextModule,
+    CardModule,
+    ImageModule,
+    CascadeSelectModule,
+    DividerModule
     CardModule,
     StepsModule,
     ToastModule,

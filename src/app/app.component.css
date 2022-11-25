@@ -1,8 +1,13 @@
-.container{
-   position: flex;
-   margin: auto;
+<<<<<<< HEAD
+=======
+/* .container{
+   position: absolute;
+   top: 25%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+} */
+/* .container{
    min-height: 100vh;
-   /* top: 25%;
-   left: 50%; */
-   /* transform: translate(-50%, -50%); */
-}
+
+} */
+>>>>>>> responsive
