@@ -1,6 +1,8 @@
-<div class="flex justify-content-start col">
-    <div class="card">
-        <p-steps [model]="items" [readonly]="false"></p-steps>
-        <router-outlet></router-outlet>
+<div class="">
+    <div class="grid">
+        <p-steps class="col-12" [model]="items" [readonly]="false"></p-steps>
+        <div class="col-12">
+			<router-outlet></router-outlet>
+        </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
-<p-card class="grid col-6">
+<div class="grid">
+    <p-card class="grid col-6">
     <ng-template pTemplate="title">
         Formación Academica.
     </ng-template>
@@ -16,19 +17,23 @@
             </div>
             <div class="col-12 flex flex-column">
                 <label for="nombreTitulo">Nombre del titulo obtenido</label>
-                <input id="nombreTitulo" type="text" required pInputText> 
+                <input id="nombreTitulo" type="text" required pInputText>
             </div>
             <div class="col-12 flex flex-column">
                 <label for="institución">Institución</label>
-                <input id="institución" type="text" required pInputText> 
+                <input id="institución" type="text" required pInputText>
             </div>
             <div class="col-12 flex flex-column">
                 <label for="fechaGrado">Fecha de Grado</label>
-                <input id="fechaGrado" type="date" required pInputText> 
+                 <p-calendar inputId="basic" [(ngModel)]="date1" dateFormat="dd/mm/yy"></p-calendar>
             </div>
             <div class="col-12">
                 <label for="pdf">Subir diploma (Formato PDF)</label>
-                <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf" ></p-fileUpload>
+                <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf" >
+                  <ng-template let-file pTemplate="file">
+                    <div>Custom UI to display a file</div>
+                </ng-template>
+                </p-fileUpload>
             </div>
             <div class="col">
                 <div class="flex flex-row gap-6">
@@ -41,10 +46,13 @@
     </ng-template>
     <ng-template pTemplate="footer">
         <div class="flex justify-content-end">
-            <button pButton label="Agregar" icon="pi pi-check" iconPos="right"></button> 
+            <button pButton label="Agregar" icon="pi pi-check" iconPos="right"></button>
         </div>
     </ng-template>
-</p-card>
+    </p-card>
+    <div class="col-6">test!</div>
+</div>
+
 
 <ng-template #convalidado>
     <div class="col-12">

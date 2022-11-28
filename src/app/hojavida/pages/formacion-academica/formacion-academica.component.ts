@@ -13,6 +13,7 @@ export class FormacionAcademicaComponent implements OnInit {
   selectedModalidad!:modalidad;
 
   checked: boolean = false;
+  date1: Date = new Date(0);
 
   constructor() {
     this.modalidadAcademicaList=[
@@ -36,7 +37,7 @@ export class FormacionAcademicaComponent implements OnInit {
   isChecked(){
     this.checked=!this.checked;
     console.log(this.checked);
-    
+
   }
 
 }

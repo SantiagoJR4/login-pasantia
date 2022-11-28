@@ -1,8 +1,8 @@
 <div class="grid flex-direction-column">
-    <div class="col-12">
+    <div class="col-12" *ngIf="!isLogin()">
         <app-header></app-header>
     </div>
-    <div class="col-2">
+    <div class="col-2" *ngIf="!isLogin()">
         <app-sidebar></app-sidebar>
     </div>
     <div class="col">
