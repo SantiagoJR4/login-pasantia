@@ -24,10 +24,26 @@ export enum ModalidadAcademica{
     PDO = 'Post Doctorado'
 
 }
+//------------------------------------------------------------------------------------
 export interface FormacionComplementaria{
     nombreTitulo:string,
     institucion:string,
     totalHoras:number,
     fecha?:Date,
     certificado_url?:string
+}
+export interface departamentos{
+    nombre:string
+}
+//------------------------------------------------------------------------
+export interface ExperienciaLaboral{
+    nombreEmpresa:string,
+    cargo:string,
+    dependencia?:string,
+    departamento?:string,
+    direccionEntidad?:string,
+    nombreJefe?:string,
+    telefono?:string,
+    fechaIngreso:Date,
+    fechaRetiro:Date,
 }

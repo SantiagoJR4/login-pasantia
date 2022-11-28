@@ -31,12 +31,6 @@ export class FormacionComplementariaComponent implements OnInit {
       {codigo:'PR', nombre:'Premio'},
       {codigo:'RE', nombre:'Reconocimiento'},
     ]
-
-    // this.datos=[{
-    //   nombreTitulo:'',
-    //   institucion:'',
-    //   totalHoras:0,
-    // }];
   }
 
   save(){

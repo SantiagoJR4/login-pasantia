@@ -1,1 +1,88 @@
-<p>experiencia-laboral works!</p>
+<div class="grid">
+    <p-card class="col-6">
+        <ng-template pTemplate="title">
+            Experiencia Laboral.
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+            Ingrese su formación experiencia laboral.
+        </ng-template>
+        <ng-template pTemplate="content">
+            <div class="grid">
+                <div class="col-12 flex flex-column">
+                    <label for="nombreEmpresa">Nombre de la Empresa</label>
+                    <input id="nombreEmpresa" type="text" [(ngModel)]="data.nombreEmpresa" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="cargo">Cargo desempeñado</label>
+                    <input id="cargo" type="text"  [(ngModel)]="data.cargo" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="dependencia">Dependencia</label>
+                    <input id="dependencia" type="text" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label>Elija el departamento donde estuvo trabajando</label>
+                    <p-dropdown [options]="departamentos" [(ngModel)]="selectedDepartamento"
+                        placeholder="Seleccione departamento"
+                        optionLabel="nombre">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="direccion">Dirección de la Entidad</label>
+                    <input id="direccion" type="text" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="nombreJefe">Nombre del Jefe</label>
+                    <input id="nombreJefe" type="text" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="telefono">Telefono del Jefe</label>
+                    <input id="telefono" type="text" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="Fecha Ingreso">Fecha Ingreso</label>
+                    <input id="Fecha Ingreso" type="date" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="Fecha Retiro">Fecha Retiro</label>
+                    <input id="Fecha Retiro" type="date" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="TotalTiempo">TotalTiempo</label>
+                </div>
+                <div class="col-12">
+                    <label for="pdf">Subir Certificado (Formato PDF)</label>
+                    <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf" ></p-fileUpload>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="flex justify-content-end">
+                <button pButton type="submit" (click)="save()" label="Agregar" icon="pi pi-check" iconPos="right"></button>
+            </div>
+        </ng-template>
+    </p-card>
+    <p-card class="col-6">
+            <div class="col-12 flex flex-column">
+                <p-table [value]="experienciaLaboral">
+                    <ng-template pTemplate="caption">
+                        Formación Complementaria Guardada.
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Nombre Título</th>
+                            <th>Institución</th>
+                            <th>Total Horas Cursadas</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-datos>
+                        <tr >
+                            <td>{{datos.nombreTitulo}}</td>
+                            <td>{{datos.institucion}}</td>
+                            <td>{{datos.totalHoras}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+    </p-card>
+</div>
