@@ -4,7 +4,7 @@
             Experiencia Laboral.
         </ng-template>
         <ng-template pTemplate="subtitle">
-            Ingrese su formación experiencia laboral.
+            Ingrese su experiencia laboral.
         </ng-template>
         <ng-template pTemplate="content">
             <div class="grid">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="nombreJefe">Nombre del Jefe</label>
-                    <input id="nombreJefe" type="text" required pInputText> 
+                    <input id="nombreJefe" type="text" [(ngModel)]="data.nombreJefe" required pInputText> 
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="telefono">Telefono del Jefe</label>
@@ -41,11 +41,11 @@
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="Fecha Ingreso">Fecha Ingreso</label>
-                    <input id="Fecha Ingreso" type="date" required pInputText> 
+                    <p-calendar inputId="basic" [(ngModel)]="data.fechaIngreso" dateFormat="dd/mm/yy"></p-calendar>
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="Fecha Retiro">Fecha Retiro</label>
-                    <input id="Fecha Retiro" type="date" required pInputText> 
+                    <p-calendar inputId="basic" [(ngModel)]="data.fechaRetiro" dateFormat="dd/mm/yy"></p-calendar>
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="TotalTiempo">TotalTiempo</label>
@@ -66,20 +66,24 @@
             <div class="col-12 flex flex-column">
                 <p-table [value]="experienciaLaboral">
                     <ng-template pTemplate="caption">
-                        Formación Complementaria Guardada.
+                        Experiencia Laboral Guardada.
                     </ng-template>
                     <ng-template pTemplate="header">
                         <tr>
-                            <th>Nombre Título</th>
-                            <th>Institución</th>
-                            <th>Total Horas Cursadas</th>
+                            <th>Cargo Desempeñado</th>
+                            <th>Nombre Empresa</th>
+                            <th>Nombre Jefe</th>
+                            <th>Fecha Ingreso</th>
+                            <th>Fecha Retiro</th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-datos>
                         <tr >
-                            <td>{{datos.nombreTitulo}}</td>
-                            <td>{{datos.institucion}}</td>
-                            <td>{{datos.totalHoras}}</td>
+                            <td>{{datos.cargo}}</td>
+                            <td>{{datos.nombreEmpresa}}</td>
+                            <td>{{datos.nombreJefe}}</td>
+                            <td>{{datos.fechaIngreso}}</td>
+                            <td>{{datos.fechaRetiro}}</td>
                         </tr>
                     </ng-template>
                 </p-table>

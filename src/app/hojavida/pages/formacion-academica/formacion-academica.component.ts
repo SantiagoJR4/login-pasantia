@@ -12,8 +12,14 @@ export class FormacionAcademicaComponent implements OnInit {
   modalidadAcademicaList:modalidad[];
   selectedModalidad!:modalidad;
 
-  checked: boolean = false;
-  date1: Date = new Date();
+  datos:FormacionAcademica[]=[];
+
+  data={
+    fechaGrado:new Date(),
+    nombreTitulo:'',
+    institucion:'',
+    tituloConvalidado:false,
+  }
 
   constructor() {
     this.modalidadAcademicaList=[
@@ -35,9 +41,17 @@ export class FormacionAcademicaComponent implements OnInit {
   }
 
   isChecked(){
-    this.checked=!this.checked;
-    console.log(this.checked);
+    this.data.tituloConvalidado=!this.data.tituloConvalidado;
+  }
 
+  save(){
+    this.datos.push(this.data);
+    this.data={
+      fechaGrado:new Date(),
+      nombreTitulo:'',
+      institucion:'',
+      tituloConvalidado:false,
+    }
   }
 
 }

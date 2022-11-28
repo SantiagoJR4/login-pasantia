@@ -17,15 +17,15 @@
             </div>
             <div class="col-12 flex flex-column">
                 <label for="nombreTitulo">Nombre del titulo obtenido</label>
-                <input id="nombreTitulo" type="text" required pInputText>
+                <input id="nombreTitulo" type="text" [(ngModel)]="data.nombreTitulo" required pInputText>
             </div>
             <div class="col-12 flex flex-column">
                 <label for="institución">Institución</label>
-                <input id="institución" type="text" required pInputText>
+                <input id="institución" type="text" [(ngModel)]="data.institucion" required pInputText>
             </div>
             <div class="col-12 flex flex-column">
                 <label for="fechaGrado">Fecha de Grado</label>
-                 <p-calendar inputId="basic" [(ngModel)]="date1" dateFormat="dd/mm/yy"></p-calendar>
+                 <p-calendar inputId="basic" [(ngModel)]="data.fechaGrado" dateFormat="dd/mm/yy"></p-calendar>
             </div>
             <div class="col-12">
                 <label for="pdf">Subir diploma (Formato PDF)</label>
@@ -38,10 +38,10 @@
             <div class="col">
                 <div class="flex flex-row gap-6">
                     <label for="tituloConvalidado">Título Convalidado</label>
-                    <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary"></p-checkbox>
+                    <p-checkbox [(ngModel)]="data.tituloConvalidado" [binary]="true" inputId="binary"></p-checkbox>
                 </div>
             </div>
-            <div *ngIf="!checked;else convalidado"></div>
+            <div *ngIf="!data.tituloConvalidado;else convalidado"></div>
             <ng-template #convalidado>
                 <div class="col-12">
                     <label for="pdf">Subir Resolución de convalidación</label>
@@ -50,9 +50,34 @@
             </ng-template>
         </div>
     </ng-template>
-    <ng-template pTemplate="footer">
-        <div class="flex justify-content-end">
-            <button pButton label="Agregar" icon="pi pi-check" iconPos="right"></button>
+        <ng-template pTemplate="footer">
+            <div class="flex justify-content-end">
+                <button pButton type="submit" (click)="save()" label="Agregar" icon="pi pi-check" iconPos="right"></button>
+            </div>
+        </ng-template>
+    </p-card>
+    <p-card class="col-6">
+        <div class="col-12 flex flex-column">
+            <p-table [value]="datos">
+                <ng-template pTemplate="caption">
+                    Formación Academica Guardada.
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Título Obtenido</th>
+                        <th>Institución</th>
+                        <th>Fecha Grado</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-datos>
+                    <tr>
+                        <td>{{datos.nombreTitulo}}</td>
+                        <td>{{datos.institucion}}</td>
+                        <td>{{datos.fechaGrado | date}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
         </div>
-    </ng-template>
-</p-card>
+    </p-card>
+</div>

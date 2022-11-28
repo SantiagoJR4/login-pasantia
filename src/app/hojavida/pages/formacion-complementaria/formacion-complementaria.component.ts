@@ -17,7 +17,8 @@ export class FormacionComplementariaComponent implements OnInit {
   data={
     nombreTitulo:'',
     institucion:'',
-    totalHoras:0
+    totalHoras:0,
+    fechaGrado:new Date(),
   }
   constructor() { }
 
@@ -39,6 +40,7 @@ export class FormacionComplementariaComponent implements OnInit {
     this.data={
     nombreTitulo:'',
     institucion:'',
+    fechaGrado:new Date(),
     totalHoras:0
   }
 

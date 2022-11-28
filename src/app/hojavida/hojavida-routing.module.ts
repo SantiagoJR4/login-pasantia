@@ -5,12 +5,14 @@ import { FormacionAcademicaComponent } from './pages/formacion-academica/formaci
 import { FormacionComplementariaComponent } from './pages/formacion-complementaria/formacion-complementaria.component';
 import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experiencia-laboral.component';
 import { StepsComponent } from './pages/steps/steps.component';
+import { ExperienciaDocenteComponent } from './pages/experiencia-docente/experiencia-docente.component';
 
 const routes:Routes=[
   { path: '', component:StepsComponent, children:[
     {path:'formAcad', component:FormacionAcademicaComponent},
     {path:'formComp', component:FormacionComplementariaComponent},
     {path:'expLaboral', component:ExperienciaLaboralComponent},
+    {path:'expDocente', component:ExperienciaDocenteComponent},
     {path:'**', redirectTo:''}
   ]}
 ]

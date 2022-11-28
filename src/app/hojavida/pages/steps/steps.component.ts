@@ -26,6 +26,10 @@ export class StepsComponent implements OnInit {
       {
         label:'Experiencia Laboral',
         routerLink:'expLaboral'
+      },
+      {
+        label:'Experiencia Docente',
+        routerLink:'expDocente'
       }
     ];
   }

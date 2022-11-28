@@ -6,13 +6,15 @@ import { FormacionComplementariaComponent } from './pages/formacion-complementar
 import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experiencia-laboral.component';
 import { HojavidaRoutingModule } from './hojavida-routing.module';
 import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common'
+import {CommonModule} from '@angular/common';
+import { ExperienciaDocenteComponent } from './pages/experiencia-docente/experiencia-docente.component'
 @NgModule({
   declarations: [
     FormacionAcademicaComponent,
     StepsComponent,
     FormacionComplementariaComponent,
-    ExperienciaLaboralComponent
+    ExperienciaLaboralComponent,
+    ExperienciaDocenteComponent
   ],
   imports: [
     PrimeNgModule,

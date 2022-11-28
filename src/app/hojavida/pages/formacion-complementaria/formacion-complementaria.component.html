@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="fechaGrado">Fecha de Grado</label>
-                    <input id="fechaGrado" type="date" required pInputText> 
+                    <p-calendar inputId="basic" [(ngModel)]="data.fechaGrado" dateFormat="dd/mm/yy"></p-calendar>
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="totalHoras">Total Horas</label>
@@ -51,7 +51,7 @@
                     </ng-template>
                     <ng-template pTemplate="header">
                         <tr>
-                            <th>Nombre Título</th>
+                            <th>Título Obtenido</th>
                             <th>Institución</th>
                             <th>Total Horas Cursadas</th>
                         </tr>

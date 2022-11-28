@@ -15,6 +15,11 @@ export class ExperienciaLaboralComponent implements OnInit {
   data={
     cargo:'',
     nombreEmpresa:'',
+    nombreJefe:'',
+    dependencia:'',
+    departamento:'',
+    direccionEntidad:'',
+    telefono:'',
     fechaIngreso:new Date(),
     fechaRetiro:new Date()
   }
@@ -37,8 +42,13 @@ export class ExperienciaLaboralComponent implements OnInit {
     this.data={
       cargo:'',
       nombreEmpresa:'',
+      nombreJefe:'',
+      dependencia:'',
+      departamento:'',
+      direccionEntidad:'',
+      telefono:'',
       fechaIngreso:new Date(),
-      fechaRetiro:new Date()
+      fechaRetiro:new Date(),
     }
   }
 
