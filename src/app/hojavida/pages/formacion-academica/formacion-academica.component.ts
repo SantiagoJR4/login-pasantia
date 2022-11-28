@@ -13,7 +13,7 @@ export class FormacionAcademicaComponent implements OnInit {
   selectedModalidad!:modalidad;
 
   checked: boolean = false;
-  date1: Date = new Date(0);
+  date1: Date = new Date();
 
   constructor() {
     this.modalidadAcademicaList=[
