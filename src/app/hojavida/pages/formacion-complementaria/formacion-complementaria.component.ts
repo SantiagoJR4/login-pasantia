@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { modalidad } from '../../interfaces/formacionAcademica-interface';
+import { FormacionComplementaria, modalidad } from '../../interfaces/formacionAcademica-interface';
 
 @Component({
   selector: 'app-formacion-complementaria',
@@ -10,7 +10,15 @@ export class FormacionComplementariaComponent implements OnInit {
 
   modalidadComplementariaList:modalidad[]=[];
   selectedModalidad!:modalidad;
-  
+  datos:FormacionComplementaria[]=[];
+
+  guardado:boolean=false;
+
+  data={
+    nombreTitulo:'',
+    institucion:'',
+    totalHoras:0
+  }
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +31,23 @@ export class FormacionComplementariaComponent implements OnInit {
       {codigo:'PR', nombre:'Premio'},
       {codigo:'RE', nombre:'Reconocimiento'},
     ]
+
+    // this.datos=[{
+    //   nombreTitulo:'',
+    //   institucion:'',
+    //   totalHoras:0,
+    // }];
+  }
+
+  save(){
+    this.datos.push(this.data);
+    
+    this.data={
+    nombreTitulo:'',
+    institucion:'',
+    totalHoras:0
+  }
+
   }
 
 }

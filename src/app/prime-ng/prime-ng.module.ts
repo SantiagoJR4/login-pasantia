@@ -17,6 +17,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
 import {CheckboxModule} from 'primeng/checkbox';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [],
@@ -38,7 +39,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     DividerModule,
     FileUploadModule,
     HttpClientModule,
-    CheckboxModule
+    CheckboxModule,
+    TableModule
   ]
 })
 export class PrimeNgModule { }

@@ -24,6 +24,10 @@ export enum ModalidadAcademica{
     PDO = 'Post Doctorado'
 
 }
-export enum ModalidadComplementaria{
-    
+export interface FormacionComplementaria{
+    nombreTitulo:string,
+    institucion:string,
+    totalHoras:number,
+    fecha?:Date,
+    certificado_url?:string
 }

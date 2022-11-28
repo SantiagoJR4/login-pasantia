@@ -1,19 +1,67 @@
-<p-card>
-    <ng-template pTemplate="title">
-        Formación Complementaria.
-    </ng-template>
-    <ng-template pTemplate="subtitle">
-        Ingrese su formación academica complementaria.
-    </ng-template>
-    <ng-template pTemplate="content">
-        <div class="grid">
-            <div class="col-6 flex flex-column">
-                <label>Modalidad Complementaria</label>
-                <p-dropdown [options]="modalidadComplementariaList" [(ngModel)]="selectedModalidad"
-                    placeholder="Seleccione una modalidad academica"
-                    optionLabel="nombre">
-                </p-dropdown>
+<div class="grid col-12">
+    <p-card class="col-6">
+        <ng-template pTemplate="title">
+            Formación Complementaria.
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+            Ingrese su formación academica complementaria.
+        </ng-template>
+        <ng-template pTemplate="content">
+            <div class="grid">
+                <div class="col-12 flex flex-column">
+                    <label>Modalidad Complementaria</label>
+                    <p-dropdown [options]="modalidadComplementariaList" [(ngModel)]="selectedModalidad"
+                        placeholder="Seleccione una modalidad academica"
+                        optionLabel="nombre">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="nombreTitulo">Nombre del titulo obtenido</label>
+                    <input id="nombreTitulo" type="text"  [(ngModel)]="data.nombreTitulo" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="institución">Institución</label>
+                    <input id="institución" type="text"  [(ngModel)]="data.institucion" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="fechaGrado">Fecha de Grado</label>
+                    <input id="fechaGrado" type="date" required pInputText> 
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="totalHoras">Total Horas</label>
+                    <input id="totalHoras" type="number" [(ngModel)]="data.totalHoras" required pInputText> 
+                </div>
+                <div class="col-12">
+                    <label for="pdf">Subir Certificado (Formato PDF)</label>
+                    <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf" ></p-fileUpload>
+                </div>
             </div>
-        </div>
-    </ng-template>
-</p-card>
+        </ng-template>
+    </p-card>
+        <p-card class="col-6">
+                <div class="col-12 flex flex-column">
+                    <p-table [value]="datos">
+                        <ng-template pTemplate="caption">
+                            Formación Complementaria Guardada.
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Nombre Título</th>
+                                <th>Institución</th>
+                                <th>Total Horas Cursadas</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-datos>
+                            <tr >
+                                <td>{{datos.nombreTitulo}}</td>
+                                <td>{{datos.institucion}}</td>
+                                <td>{{datos.totalHoras}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+        </p-card>
+</div>
+<p-divider align="right" class="grid col-6">
+    <button pButton type="submit" (click)="save()" class="p-button-raised p-button-rounded" icon="pi pi-plus"></button>
+</p-divider>
