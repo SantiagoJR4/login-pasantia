@@ -1,3 +1,11 @@
-<div>
-    <router-outlet></router-outlet>
+<div class="grid">
+    <div class="col-12 surface-card header h-4rem" *ngIf="!isLogin()">
+        <app-header></app-header>
+    </div>
+    <div class="surface-card h-full sidebar" *ngIf="!isLogin()">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col" [ngClass]="!isLogin() ? 'content' : ''">
+        <router-outlet></router-outlet>
+    </div>
 </div>

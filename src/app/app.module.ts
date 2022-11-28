@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HojavidaModule } from './hojavida/hojavida.module';
 import { LoginModule } from './login/login.module';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
     PrimeNgModule,
     HojavidaModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
