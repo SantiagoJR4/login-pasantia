@@ -1,11 +1,11 @@
-<div class="grid flex-direction-column">
-    <div class="col-12" *ngIf="!isLogin()">
+<div class="grid">
+    <div class="col-12 surface-card header h-4rem" *ngIf="!isLogin()">
         <app-header></app-header>
     </div>
-    <div class="col-2" *ngIf="!isLogin()">
+    <div class="surface-card h-full sidebar" *ngIf="!isLogin()">
         <app-sidebar></app-sidebar>
     </div>
-    <div class="col">
+    <div class="col" [ngClass]="!isLogin() ? 'content' : ''">
         <router-outlet></router-outlet>
     </div>
 </div>

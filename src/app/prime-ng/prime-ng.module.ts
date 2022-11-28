@@ -18,6 +18,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
 import {CheckboxModule} from 'primeng/checkbox';
 import {CalendarModule} from 'primeng/calendar';
+import {AvatarModule} from 'primeng/avatar';
 
 @NgModule({
   declarations: [],
@@ -40,7 +41,8 @@ import {CalendarModule} from 'primeng/calendar';
     FileUploadModule,
     HttpClientModule,
     CheckboxModule,
-    CalendarModule
+    CalendarModule,
+    AvatarModule
   ]
 })
 export class PrimeNgModule { }
