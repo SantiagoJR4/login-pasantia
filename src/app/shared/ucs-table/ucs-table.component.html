@@ -6,12 +6,20 @@
                     <th *ngFor="let col of columns">
                         {{ col.field }}
                     </th>
+                    <th *ngIf="editButton">Editar</th>
+                    <th *ngIf="deleteButton">Borrar</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-rowData>
                 <tr >
                     <td *ngFor="let col of columns">
                         {{rowData[col.field]}}
+                    </td>
+                    <td *ngIf="editButton">
+                        <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-info"></button>
+                    </td>
+                    <td *ngIf="deleteButton">
+                        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
                     </td>
                 </tr>
             </ng-template>

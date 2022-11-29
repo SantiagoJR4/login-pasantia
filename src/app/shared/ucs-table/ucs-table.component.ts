@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface ColumnTable {
-  field: string,
-  name: string
-}
+//import { ColumnTable } from 'src/app/interfaces/table.model';
 
 @Component({
   selector: 'app-ucs-table',
@@ -14,6 +10,8 @@ export class UcsTableComponent implements OnInit {
 
   @Input() columns: ColumnTable[] = [];
   @Input() data: any;
+  @Input() editButton: boolean = false;
+  @Input() deleteButton: boolean = false;
 
   constructor() {
   }
