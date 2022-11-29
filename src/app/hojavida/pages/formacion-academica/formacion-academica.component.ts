@@ -38,9 +38,6 @@ export class FormacionAcademicaComponent implements OnInit {
       {codigo: 'DOC', nombre: 'Doctorado o PHD'},
       {codigo:'PDO', nombre:'Post Doctorado'}
     ]
-
-    console.log(this.data);
-
    }
 
   ngOnInit(): void {
