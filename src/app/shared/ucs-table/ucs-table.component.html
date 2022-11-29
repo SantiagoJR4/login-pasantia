@@ -1,9 +1,6 @@
 <p-card class="col-6">
     <div class="col-12 flex flex-column">
         <p-table [value]="data">
-            <ng-template pTemplate="caption">
-                Formación Complementaria Guardada.
-            </ng-template>
             <ng-template pTemplate="header">
                 <tr>
                     <th *ngFor="let col of columns">
@@ -11,7 +8,7 @@
                     </th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <ng-template pTemplate="body" let-rowData>
                 <tr >
                     <td *ngFor="let col of columns">
                         {{rowData[col.field]}}

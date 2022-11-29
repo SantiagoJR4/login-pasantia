@@ -7,6 +7,8 @@ import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experie
 import { HojavidaRoutingModule } from './hojavida-routing.module';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common'
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [
     FormacionAcademicaComponent,
@@ -18,7 +20,8 @@ import {CommonModule} from '@angular/common'
     PrimeNgModule,
     HojavidaRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class HojavidaModule { }

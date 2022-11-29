@@ -3,15 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-import { TableComponent } from './table/table.component';
-
-
+import { UcsTableComponent } from './ucs-table/ucs-table.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    TableComponent
+    UcsTableComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +17,8 @@ import { TableComponent } from './table/table.component';
   ],
   exports: [
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    UcsTableComponent
   ]
 })
 export class SharedModule { }

@@ -15,6 +15,17 @@ export class FormacionAcademicaComponent implements OnInit {
   checked: boolean = false;
   date1: Date = new Date();
 
+  columns = [
+    {field: 'titulo', name: 'Titulo'},
+    {field: 'institucion', name: 'Institución'},
+    {field: 'fecha', name: 'Fecha'},
+  ]
+
+  data = [
+    {titulo: 'Enfermería Auxiliar', institucion: 'Universidad Mariana', fecha: '2020-09-01'},
+    {titulo: 'Enfermería tipo C', institucion: 'Universidad de Nariño', fecha: '2017-09-01'}
+  ]
+
   constructor() {
     this.modalidadAcademicaList=[
       {codigo:'AU', nombre: 'Auxiliar'},
@@ -27,6 +38,8 @@ export class FormacionAcademicaComponent implements OnInit {
       {codigo: 'DOC', nombre: 'Doctorado o PHD'},
       {codigo:'PDO', nombre:'Post Doctorado'}
     ]
+
+    console.log(this.data);
 
    }
 
