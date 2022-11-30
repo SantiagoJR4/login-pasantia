@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Departamentos } from '../../interfaces/departamentos-interface';
+import { Departamento } from '../../interfaces/departamentos-interface';
 import { ExperienciaLaboral } from '../../interfaces/formacionAcademica-interface';
 import { DatosService } from '../../services/datos.service';
 
@@ -10,10 +10,10 @@ import { DatosService } from '../../services/datos.service';
 })
 export class ExperienciaLaboralComponent implements OnInit {
 
-  selectedDepartamento!:Departamentos[];
+  selectedDepartamento: Departamento|null = null;
   experienciaLaboral:ExperienciaLaboral[]=[];
 
-  departamentos:Departamentos[]=[];
+  departamentos:Departamento[]=[];
 
   data={
     cargo:'',
@@ -29,19 +29,12 @@ export class ExperienciaLaboralComponent implements OnInit {
 
   constructor(private datosService:DatosService) { }
 
-  obtenerDepartamentos(){
-    return this.datosService.buscarDepartamento().  
-        subscribe(resp => {this.departamentos=resp
-        console.log(this.departamentos)});
-
-  }
 
   ngOnInit(): void {
-    // this.departamentos=[
-    //   {nombre:'Nariño' },
-    //   {nombre:'Antioquia'},
-    //   {nombre:'Cauca'},
-    //   {nombre:'Chocó'}]
+    this.datosService.buscarDepartamento().  
+    subscribe(departamentos => {this.departamentos = departamentos
+      .filter(item => item.dpto !== undefined && item.dpto !== null)
+   });
   }
 
 

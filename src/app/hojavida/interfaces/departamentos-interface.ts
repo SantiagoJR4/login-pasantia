@@ -5,7 +5,7 @@ export interface Divipola {
     nom_mpio:       string;
     tipo_municipio: TipoMunicipio;
 }
-export interface Departamentos {
+export interface Departamento {
     dpto?: string;
 }
 
