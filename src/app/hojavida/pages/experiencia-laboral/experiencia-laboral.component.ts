@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { departamentos, ExperienciaLaboral } from '../../interfaces/formacionAcademica-interface';
+import { Departamentos } from '../../interfaces/departamentos-interface';
+import { ExperienciaLaboral } from '../../interfaces/formacionAcademica-interface';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-experiencia-laboral',
@@ -8,9 +10,10 @@ import { departamentos, ExperienciaLaboral } from '../../interfaces/formacionAca
 })
 export class ExperienciaLaboralComponent implements OnInit {
 
-  departamentos:departamentos[]=[];
-  selectedDepartamento!:departamentos;
+  selectedDepartamento!:Departamentos[];
   experienciaLaboral:ExperienciaLaboral[]=[];
+
+  departamentos:Departamentos[]=[];
 
   data={
     cargo:'',
@@ -24,15 +27,21 @@ export class ExperienciaLaboralComponent implements OnInit {
     fechaRetiro:new Date()
   }
 
+  constructor(private datosService:DatosService) { }
 
-  constructor() { }
+  obtenerDepartamentos(){
+    return this.datosService.buscarDepartamento().  
+        subscribe(resp => {this.departamentos=resp
+        console.log(this.departamentos)});
+
+  }
 
   ngOnInit(): void {
-    this.departamentos=[
-      {nombre:'Nariño' },
-      {nombre:'Antioquia'},
-      {nombre:'Cauca'},
-      {nombre:'Chocó'}]
+    // this.departamentos=[
+    //   {nombre:'Nariño' },
+    //   {nombre:'Antioquia'},
+    //   {nombre:'Cauca'},
+    //   {nombre:'Chocó'}]
   }
 
 

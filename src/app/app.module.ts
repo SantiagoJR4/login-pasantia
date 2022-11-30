@@ -8,6 +8,8 @@ import { HojavidaModule } from './hojavida/hojavida.module';
 import { LoginModule } from './login/login.module';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     HojavidaModule,
     BrowserModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

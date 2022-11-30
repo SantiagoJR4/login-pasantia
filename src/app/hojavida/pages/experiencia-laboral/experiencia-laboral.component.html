@@ -82,8 +82,8 @@
                             <td>{{datos.cargo}}</td>
                             <td>{{datos.nombreEmpresa}}</td>
                             <td>{{datos.nombreJefe}}</td>
-                            <td>{{datos.fechaIngreso}}</td>
-                            <td>{{datos.fechaRetiro}}</td>
+                            <td>{{datos.fechaIngreso | date}}</td>
+                            <td>{{datos.fechaRetiro | date}}</td>
                         </tr>
                     </ng-template>
                 </p-table>
