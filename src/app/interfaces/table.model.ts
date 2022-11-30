@@ -1,4 +1,4 @@
-interface ColumnTable {
+export interface ColumnTable {
     field: string,
     name: string
 }

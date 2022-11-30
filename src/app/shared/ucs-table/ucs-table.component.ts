@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-//import { ColumnTable } from 'src/app/interfaces/table.model';
+import { ColumnTable } from 'src/app/interfaces/table.model';
 
 @Component({
   selector: 'app-ucs-table',
