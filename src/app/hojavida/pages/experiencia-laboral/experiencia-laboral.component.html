@@ -21,10 +21,26 @@
                     <input id="dependencia" type="text" required pInputText> 
                 </div>
                 <div class="col-12 flex flex-column">
-                    <label>Elija el departamento donde estuvo trabajando</label>
+                    <label>Elija el Departamento donde estuvo trabajando</label>
                     <p-dropdown [options]="departamentos" [(ngModel)]="selectedDepartamento"
                         placeholder="Seleccione departamento"
-                        optionLabel="dpto" [filter]="true" filterBy="dpto">
+                        optionLabel="dpto" 
+                        [filter]="true" 
+                        filterBy="dpto"
+                        (onClick)="changeDepto()"
+                        >
+                    </p-dropdown>
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label>Elija el Municipio donde estuvo trabajando</label>
+                    <p-dropdown [options]="municipios"
+                        [(ngModel)]="selectedMunicipio"
+                        placeholder="Seleccione Municipio"
+                        optionLabel="nom_mpio" 
+                        [filter]="true" 
+                        filterBy="nom_mpio"
+                        [disabled]="!previewDepartamento"
+                        >
                     </p-dropdown>
                 </div>
                 <div class="col-12 flex flex-column">

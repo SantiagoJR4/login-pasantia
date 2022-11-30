@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Departamento } from '../../interfaces/departamentos-interface';
+import { Departamento, Divipola } from '../../interfaces/departamentos-interface';
 import { ExperienciaLaboral } from '../../interfaces/formacionAcademica-interface';
 import { DatosService } from '../../services/datos.service';
 
@@ -10,10 +10,15 @@ import { DatosService } from '../../services/datos.service';
 })
 export class ExperienciaLaboralComponent implements OnInit {
 
+  departamentos:Departamento[]=[];
   selectedDepartamento: Departamento|null = null;
+  previewDepartamento: Departamento|null = null;
+
   experienciaLaboral:ExperienciaLaboral[]=[];
 
-  departamentos:Departamento[]=[];
+
+  municipios:Divipola[]=[];
+  selectedMunicipio:Divipola|null=null;
 
   data={
     cargo:'',
@@ -29,14 +34,12 @@ export class ExperienciaLaboralComponent implements OnInit {
 
   constructor(private datosService:DatosService) { }
 
-
   ngOnInit(): void {
     this.datosService.buscarDepartamento().  
     subscribe(departamentos => {this.departamentos = departamentos
       .filter(item => item.dpto !== undefined && item.dpto !== null)
-   });
+    });
   }
-
 
   save(){
     this.experienciaLaboral.push(this.data);
@@ -52,6 +55,15 @@ export class ExperienciaLaboralComponent implements OnInit {
       fechaIngreso:new Date(),
       fechaRetiro:new Date(),
     }
+  }
+
+  changeDepto(){
+    if (this.previewDepartamento !== this.selectedDepartamento){
+      this.previewDepartamento = this.selectedDepartamento
+      return this.datosService.buscarMunicipio(this.selectedDepartamento?.dpto ?? '').
+      subscribe(municipios =>this.municipios=municipios);
+    }
+    return null
   }
 
 }
