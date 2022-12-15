@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { AcademicModality} from '../../interfaces/hv-interface';
+import { Component, OnInit } from '@angular/core';
+import { FormacionAcademica, modalidad, ModalidadAcademica } from '../../interfaces/formacionAcademica-interface';
+
 
 @Component({
   selector: 'app-formacion-academica',
@@ -9,30 +9,49 @@ import { AcademicModality} from '../../interfaces/hv-interface';
 })
 export class FormacionAcademicaComponent implements OnInit {
 
-  @Input() formHV!:FormGroup;
-  @Output() data = new EventEmitter<FormGroup>();
+  modalidadAcademicaList:modalidad[];
+  selectedModalidad!:modalidad;
 
-  modalidadAcademicaList:AcademicModality[];
-  selectedModalidad!:AcademicModality;
+  datos:FormacionAcademica[]=[];
 
-  tituloConvalidado=true;
-  
+  data={
+    fechaGrado:new Date(),
+    nombreTitulo:'',
+    institucion:'',
+    tituloConvalidado:false,
+  }
+
   constructor() {
     this.modalidadAcademicaList=[
-      
+      {codigo:'AU', nombre: 'Auxiliar'},
+      {codigo: 'TP', nombre: 'Técnico Profesional'},
+      {codigo: 'TC', nombre: 'Tecnólogo'},
+      {codigo: 'TCE', nombre: 'Tecnólogo Especializado'},
+      {codigo: 'UN', nombre: 'Universitario'},
+      {codigo: 'ESP', nombre: 'Especialización'},
+      {codigo: 'MG', nombre: 'Maestría o Magíster'},
+      {codigo: 'DOC', nombre: 'Doctorado o PHD'},
+      {codigo:'PDO', nombre:'Post Doctorado'}
     ]
+
    }
 
   ngOnInit(): void {
 
   }
 
-  // isChecked(){
-  //   this.data.tituloConvalidado=!this.data.tituloConvalidado;
-  // }
+  isChecked(){
+    this.data.tituloConvalidado=!this.data.tituloConvalidado;
+  }
 
   save(){
-    this.data.emit(this.formHV);
+    this.datos.push(this.data);
+    this.data={
+      fechaGrado:new Date(),
+      nombreTitulo:'',
+      institucion:'',
+      tituloConvalidado:false,
+    }
   }
 
 }

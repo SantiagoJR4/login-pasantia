@@ -1,18 +1,8 @@
 <div class="">
     <div class="grid">
-        <p-steps class="col-12" [model]="items" [readonly]="false" [activeIndex]="position"></p-steps>
+        <p-steps class="col-12" [model]="items" [readonly]="false"></p-steps>
         <div class="col-12">
-            <form>
-                <!-- <router-outlet></router-outlet> -->
-                <app-formacion-academica [formHV]="formHV" *ngIf="position === 0"></app-formacion-academica>
-                <app-formacion-complementaria  *ngIf="position === 1"></app-formacion-complementaria>
-                <app-experiencia-laboral *ngIf="position === 2"></app-experiencia-laboral>
-                <app-experiencia-docente *ngIf="position === 3"></app-experiencia-docente>
-            </form>
+			<router-outlet></router-outlet>
         </div>
     </div>
 </div>
-
-<button pButton (click)="position = position - 1" [disabled]="position === 0">Paso Anterior</button>
-<button pButton (click)="position = position + 1" *ngIf="position !== 3">Paso Siguiente</button>
-<button pButton (click)="position = 0" *ngIf="position === 3">Terminar</button>

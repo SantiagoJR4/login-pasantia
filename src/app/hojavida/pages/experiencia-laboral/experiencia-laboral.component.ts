@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Departamento, Divipola } from '../../interfaces/departamentos-interface';
-import { WorkExperience } from '../../interfaces/hv-interface';
+import { ExperienciaLaboral } from '../../interfaces/formacionAcademica-interface';
 import { DatosService } from '../../services/datos.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ExperienciaLaboralComponent implements OnInit {
   selectedDepartamento: Departamento|null = null;
   previewDepartamento: Departamento|null = null;
 
-  experienciaLaboral:WorkExperience[]=[];
+  experienciaLaboral:ExperienciaLaboral[]=[];
 
 
   municipios:Divipola[]=[];
@@ -42,19 +42,19 @@ export class ExperienciaLaboralComponent implements OnInit {
   }
 
   save(){
-    // this.experienciaLaboral.push(this.data);
+    this.experienciaLaboral.push(this.data);
     
-    // this.data={
-    //   cargo:'',
-    //   nombreEmpresa:'',
-    //   nombreJefe:'',
-    //   dependencia:'',
-    //   departamento:'',
-    //   direccionEntidad:'',
-    //   telefono:'',
-    //   fechaIngreso:new Date(),
-    //   fechaRetiro:new Date(),
-    // }
+    this.data={
+      cargo:'',
+      nombreEmpresa:'',
+      nombreJefe:'',
+      dependencia:'',
+      departamento:'',
+      direccionEntidad:'',
+      telefono:'',
+      fechaIngreso:new Date(),
+      fechaRetiro:new Date(),
+    }
   }
 
   changeDepto(){
