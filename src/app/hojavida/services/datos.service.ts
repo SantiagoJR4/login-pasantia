@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Departamento, Divipola } from '../interfaces/departamentos-interface';
+import { Snies } from '../interfaces/snies-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Departamento, Divipola } from '../interfaces/departamentos-interface';
 export class DatosService {
   
   urlDivipola="https://www.datos.gov.co/resource/gdxc-w37w.json";
+  urlSnies="https://www.datos.gov.co/resource/n5yy-8nav.json";
 
 
   constructor(private http:HttpClient) { }
@@ -22,7 +24,9 @@ export class DatosService {
     return this.http.get<Divipola[]>(`${this.urlDivipola}?dpto=${termino}`);
   }
 
+  buscarSnies():Observable<Snies[]>{
+    return this.http.get<Snies[]>(this.urlSnies);
+  }
+
 
 }
-
-//https://codeshare.io/X891Z8

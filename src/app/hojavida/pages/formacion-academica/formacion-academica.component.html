@@ -1,83 +1,77 @@
 <div class="grid">
-    <p-card class="col-6">
-    <ng-template pTemplate="title">
-        Formación Academica.
-    </ng-template>
-    <ng-template pTemplate="subtitle">
-        Ingrese su formación academica correspondiente.
-    </ng-template>
-    <ng-template pTemplate="content">
-        <div class="grid">
-            <div class="col-12 flex flex-column">
-                <label>Modalidad Academica</label>
-                <p-dropdown [options]="modalidadAcademicaList" [(ngModel)]="selectedModalidad"
-                    placeholder="Seleccione una modalidad academica"
-                    optionLabel="nombre">
-                </p-dropdown>
-            </div>
-            <div class="col-12 flex flex-column">
-                <label for="nombreTitulo">Nombre del titulo obtenido</label>
-                <input id="nombreTitulo" type="text" [(ngModel)]="data.nombreTitulo" required pInputText>
-            </div>
-            <div class="col-12 flex flex-column">
-                <label for="institución">Institución</label>
-                <input id="institución" type="text" [(ngModel)]="data.institucion" required pInputText>
-            </div>
-            <div class="col-12 flex flex-column">
-                <label for="fechaGrado">Fecha de Grado</label>
-                 <p-calendar inputId="basic" [(ngModel)]="data.fechaGrado" dateFormat="dd/mm/yy"></p-calendar>
-            </div>
-            <div class="col-12">
-                <label for="pdf">Subir diploma (Formato PDF)</label>
-                <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf" >
-                  <ng-template let-file pTemplate="file">
-                    <div>Custom UI to display a file</div>
-                </ng-template>
-                </p-fileUpload>
-            </div>
-            <div class="col">
-                <div class="flex flex-row gap-6">
-                    <label for="tituloConvalidado">Título Convalidado</label>
-                    <p-checkbox [(ngModel)]="data.tituloConvalidado" [binary]="true" inputId="binary"></p-checkbox>
+    <form [formGroup]="formHV" (ngSubmit)="save()">
+        <p-card class="col-6">
+        <ng-template pTemplate="title">
+            Formación Academica.
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+            Ingrese su formación academica correspondiente.
+        </ng-template>
+        <ng-template pTemplate="content">
+            <div class="grid">
+                <div class="col-12 flex flex-column">
+                    <label>Modalidad Academica</label>
+                    <p-dropdown [options]="modalidadAcademicaList"
+                        placeholder="Seleccione una modalidad academica"
+                        optionLabel="nombre"
+                        formControlName="selectedModalidad">
+                    </p-dropdown>
                 </div>
-            </div>
-            <div *ngIf="!data.tituloConvalidado;else convalidado"></div>
-            <ng-template #convalidado>
+                <div class="col-12 flex flex-column">
+                    <label for="nombreTitulo">Nombre del titulo obtenido</label>
+                    <input id="nombreTitulo" 
+                           type="text" 
+                           formControlName="nombreTitulo" 
+                           pInputText>
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="institución">Institución</label>
+                    <input id="institución" 
+                           type="text" 
+                           formControlName="institucion" 
+                           pInputText>
+                </div>
+                <div class="col-12 flex flex-column">
+                    <label for="fechaGrado">Fecha de Grado</label>
+                     <p-calendar inputId="basic" 
+                                 formControlName="fechaGrado"
+                                 dateFormat="dd/mm/yy"></p-calendar>
+                </div>
                 <div class="col-12">
-                    <label for="pdf">Subir Resolución de convalidación</label>
-                    <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf"></p-fileUpload>
+                    <label for="pdf">Subir diploma (Formato PDF)</label>
+                    <p-fileUpload id="diploma" 
+                                  name="myfile[]" 
+                                  [showUploadButton]="false" 
+                                  url="./upload.php" 
+                                  accept=".pdf" 
+                                  >
+                      <ng-template let-file pTemplate="file">
+                        <div>Custom UI to display a file</div>
+                    </ng-template>
+                    </p-fileUpload>
                 </div>
-            </ng-template>
-        </div>
-    </ng-template>
-        <ng-template pTemplate="footer">
-            <div class="flex justify-content-end">
-                <button pButton type="submit" (click)="save()" label="Agregar" icon="pi pi-check" iconPos="right"></button>
+                <div class="col">
+                    <div class="flex flex-row gap-6">
+                        <label for="tituloConvalidado">Título Convalidado</label>
+                        <p-checkbox formControlName="tituloConvalidado"
+                                    [binary]="true" 
+                                    inputId="binary"></p-checkbox>
+                    </div>
+                </div>
+                <div *ngIf="!tituloConvalidado;else convalidado"></div>
+                <ng-template #convalidado>
+                    <div class="col-12">
+                        <label for="pdf">Subir Resolución de convalidación</label>
+                        <p-fileUpload id="diploma" name="myfile[]" [showUploadButton]="false" url="./upload.php" accept=".pdf"></p-fileUpload>
+                    </div>
+                </ng-template>
             </div>
         </ng-template>
-    </p-card>
-    <p-card class="col-6">
-        <div class="col-12 flex flex-column">
-            <p-table [value]="datos">
-                <ng-template pTemplate="caption">
-                    Formación Academica Guardada.
-                </ng-template>
-                <ng-template pTemplate="header">
-                    <tr>
-                        <th>Título Obtenido</th>
-                        <th>Institución</th>
-                        <th>Fecha Grado</th>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-datos>
-                    <tr>
-                        <td>{{datos.nombreTitulo}}</td>
-                        <td>{{datos.institucion}}</td>
-                        <td>{{datos.fechaGrado | date}}</td>
-                    </tr>
-                </ng-template>
-            </p-table>
-
-        </div>
-    </p-card>
+            <ng-template pTemplate="footer">
+                <div class="flex justify-content-end">
+                    <button pButton type="submit" label="Agregar" icon="pi pi-check" iconPos="right"></button>
+                </div>
+            </ng-template>
+        </p-card>
+    </form>
 </div>

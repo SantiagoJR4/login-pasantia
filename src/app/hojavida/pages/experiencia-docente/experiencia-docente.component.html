@@ -9,12 +9,23 @@
         <ng-template pTemplate="content">
             <div class="grid">
                 <div class="col-12 flex flex-column">
-                    <label for="datosUniversidad">Codigo SNIES</label>
-                    <input id="datosUniversidad" type="text" [(ngModel)]="data.codigoSnies" required pInputText> 
+                    <label>Elija la universidad...</label>
+                    <p-dropdown [options]="universidades" [(ngModel)]="selectedUniversidad"
+                        [showClear]="true"
+                        placeholder="Seleccione una universidad"
+                        optionLabel="nombre_instituci_n"
+                        [filter]="true">
+                            <ng-template pTemplate="selectedItem">
+                                <span>{{selectedUniversidad?.nombre_instituci_n}} | {{selectedUniversidad?.cod_departamento}} | {{selectedUniversidad?.municipio_domicilio}}</span>
+                            </ng-template>
+                            <ng-template let-universidad pTemplate="item">
+                                <span>{{universidad.nombre_instituci_n}} | {{universidad.cod_departamento}} | {{universidad.municipio_domicilio}}</span>
+                            </ng-template>
+                    </p-dropdown>
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="facultad">Facultad</label>
-                    <input id="facultad" type="text" required pInputText> 
+                    <input id="facultad" type="text" [(ngModel)]="data.facultad" required pInputText> 
                 </div>
                 <div class="col-12 flex flex-column">
                     <label for="Programa">Programa</label>
@@ -55,7 +66,7 @@
                     </ng-template>
                     <ng-template pTemplate="header">
                         <tr>
-                            <th>Codigo SNIES</th>
+                            <th>Universidad</th>
                             <th>Facultad</th>
                             <th>Programa</th>
                             <th>Fecha Ingreso</th>
@@ -64,9 +75,9 @@
                     </ng-template>
                     <ng-template pTemplate="body" let-datos>
                         <tr >
-                            <td>{{datos.codigoSnies}}</td>
-                            <td>{{datos.facultad</td>
-                            <td>{{datos.programa}</td>
+                            <td>{{datos.universidad}}</td>
+                            <td>{{datos.facultad}}</td>
+                            <td>{{datos.programa}}</td>
                             <td>{{datos.fechaIngreso | date}}</td>
                             <td>{{datos.fechaRetiro | date}}</td>
                         </tr>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -9,27 +10,35 @@ import { MenuItem } from 'primeng/api';
 export class StepsComponent implements OnInit {
   
   items:MenuItem[]=[];
-  // subscription:Subscription; //necesaria para mensaje flotante
+  position:number=0;
+  
+  formHV:FormGroup = this.fb.group({
+    selectedModalidad:['',[Validators.required]],
+    nombreTitulo:['',[Validators.required]],
+    institucion:['', [Validators.required]],
+    fechaGrado:[Date,[Validators.required]],
+    tituloConvalidado:[false,[Validators.required]],
 
+  })
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
       this.items=[{
         label:'Formación Academica',
-        routerLink:'formAcad'
+        routerLink:'hojavida'
       },
       {
         label:'Formación Complementaria',
-        routerLink:'formComp'
+        routerLink:'hojavida'
       },
       {
         label:'Experiencia Laboral',
-        routerLink:'expLaboral'
+        routerLink:'hojavida'
       },
       {
         label:'Experiencia Docente',
-        routerLink:'expDocente'
+        routerLink:'hojavida'
       }
     ];
   }

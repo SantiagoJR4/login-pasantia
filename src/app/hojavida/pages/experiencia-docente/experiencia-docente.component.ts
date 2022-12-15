@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ExperienciaDocente, modalidad, ModalidadAcademica } from '../../interfaces/formacionAcademica-interface';
+import { ContractModality, TeachingExperience} from '../../interfaces/hv-interface';
+import { Snies } from '../../interfaces/snies-interface';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-experiencia-docente',
@@ -8,32 +10,33 @@ import { ExperienciaDocente, modalidad, ModalidadAcademica } from '../../interfa
 })
 export class ExperienciaDocenteComponent implements OnInit {
 
-  experienciaDocente:ExperienciaDocente[]=[];
+  experienciaDocente:TeachingExperience[]=[];
 
-  modalidadContratoList!:modalidad[];
-  selectedModalidad!:modalidad;
+  modalidadContratoList:ContractModality[];
+  selectedModalidad!:ContractModality;
+
+  universidades:Snies[]=[];
+  selectedUniversidad:Snies|null=null;
 
   data={
-    codigoSnies:'',
+    universidad:'',
     fechaIngreso:new Date(),
     fechaRetiro:new Date(),
     facultad:'',
     programa:''
   }
 
-  constructor() { 
+  constructor(private datosService:DatosService) { 
     this.modalidadContratoList=[
-      {codigo:'TC',nombre:'Tiempo Completo'},
-      {codigo:'MT',nombre:'Medio Tiempo'},
-      {codigo:'HC',nombre:'Hora Cátedra'}
     ]
   }
 
   ngOnInit(): void {
-
+    this.datosService.buscarSnies()
+      .subscribe(universidades=>{(this.universidades=universidades)});
   }
   save(){
-    this.experienciaDocente.push(this.data);
+    //
   }
 
 }
